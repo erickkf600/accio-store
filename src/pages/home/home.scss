@@ -1,0 +1,19 @@
+
+#flex{
+    @extend %flex-box;
+    #title{
+        margin-top: .5rem
+    }
+    #button{
+        font-size: 2.5rem;
+        margin: 0;
+        padding: 1.5rem;
+    }
+}
+ion-content{
+    background: color($colors, cinza);
+}
+#slide{
+    width: 100%;
+    margin:0 
+}

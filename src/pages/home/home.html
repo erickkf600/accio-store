@@ -1,0 +1,43 @@
+<ion-header >
+  <ion-navbar>
+    <button ion-button menuToggle id="menu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <div id="flex">
+      <ion-title id="title">
+        <img src="../../assets/imgs/title.png" width="120">
+      </ion-title>
+      <button ion-button clear color="dark" id="button">
+        <ion-icon md="md-search"></ion-icon>
+      </button>
+      <button ion-button clear color="dark" id="button">
+        <ion-icon name="md-cart"></ion-icon>
+      </button>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content id="content">
+  <ion-card id="slide">
+    <ion-slides autoplay="3000" parallax effect="fade" loop speed="800" >
+      <ion-slide *ngFor="let img of [1,2,3,4]"> 
+        <img src="../../assets/imgs/{{img}}.jpg">
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-grid>
+      <ion-row>
+        <ion-slides #productSlides>
+          <ion-slide *ngFor="let product of products">
+            <ion-card no-padding>
+              <img [src]="product.featured_src" />
+              <h1 padding center> {{ product.title }} </h1>
+              <p center padding [innerHTML]="product.short_description"></p>
+  
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </ion-row>
+    </ion-grid>
+</ion-content>
