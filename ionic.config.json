@@ -1,7 +1,5 @@
 {
-  "name": "AulaIonic",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "accio-stor",
+  "integrations": {},
   "type": "ionic-angular"
 }
