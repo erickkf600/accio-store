@@ -27,5 +27,11 @@ export class HomePage {
       alert.present();
     })
   }
+  doInfinite(infiniteScroll) {
+    setTimeout(() => {
+      this.WooCommerce;
+      infiniteScroll.complete();
+    }, 500);
+  }
 
 }

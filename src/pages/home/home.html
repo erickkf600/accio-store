@@ -39,21 +39,26 @@
         <ion-card id="card">
           <img [src]="product.featured_src" />
           <hr>
+          <ion-card-title id="preco">
+            <p>R$ {{product.price}}</p>
+          </ion-card-title>
+          <hr>
           <ion-card-content>
-            <ion-fab right middle>
+            <ion-fab right top id="favorite">
               <button ion-fab mini color="danger">
                 <ion-icon name="md-heart-outline"></ion-icon>
               </button>
             </ion-fab>
-            <ion-card-title id="titulo">
-              <p>{{ product.title }}</p>
-            </ion-card-title>
-            <div id="preco">
-              <p center padding [innerHTML]="product.price"></p>
+            <div id="titulo">
+              <h2 [innerHTML]="product.title.substr(0, 30) + '...'"></h2>
             </div>
           </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
