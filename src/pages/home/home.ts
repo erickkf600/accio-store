@@ -8,15 +8,16 @@ import * as WC from 'woocommerce-api';
 })
 export class HomePage {
   WooCommerce: any;
-  products: any[];
+  itens: any[];
   constructor(public navCtrl: NavController, private alertCtrl: AlertController) {
     this.WooCommerce = WC({
-      url:"http://accio-estoque.epizy.com/",
-      consumerKey: "ck_476bbb2a6bb9eb85afdfd8ced49bdc58fd086817",
-      consumerSecret: "cs_a9a4ac980716241180c439b937d2be4aec8aa461",
+      url:"http://localhost/ACCIO-STORE/",
+      consumerKey: "ck_c44ae4f28cad1f59b33e0a1648a19e1431ddd0ae",
+      consumerSecret: "cs_4703ff399dbb21c75460cbbea33b4a50f0aee464",
     });
     this.WooCommerce.getAsync("products").then( (data) =>{
       console.log(JSON.parse(data.body));
+      this.itens = JSON.parse(data.body).products;
     }, (err)=>{
       let alert = this.alertCtrl.create({
         title: 'ERRO DE CONEXÃO',
